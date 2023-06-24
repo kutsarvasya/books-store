@@ -1,0 +1,24 @@
+//utils
+@import './utils/variabls';
+@import './utils/mixin';
+//base
+@import './base/container';
+@import './base/body';
+@import './base/common';
+@import './base/reset';
+
+//components
+@import './components/burger.scss';
+@import './components/modal';
+@import './components/autoriz-modal';
+
+//layout
+@import './layout/main';
+@import './layout/categories';
+@import './layout/header';
+@import './layout/homePage';
+@import './layout/mainStore';
+@import './layout/store';
+@import './layout/support';
+@import './layout/loader';
+@import './layout/scroll';

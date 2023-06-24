@@ -1,0 +1,200 @@
+/*modal-autoriz*/
+
+.modal-icon-cross {
+  stroke: $primary-color;
+  width: 14px;
+  height: 14px;
+
+  @include mq(tablet) {
+    width: 28px;
+    height: 28px;
+    &:hover,
+    &:focus {
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      stroke: $accent-text-color;
+    }
+  }
+}
+
+.backdrop-autoriz {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(136deg, #7ea0f5, $accent-text-color);
+  z-index: 1000;
+}
+
+.backdrop-autoriz[autoriz-is-hidden] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.autoriz-modal {
+  position: absolute;
+  top: 30%;
+  left: 6%;
+  background: $second-color;
+  border: 2px solid #111111;
+  border-radius: 18px;
+  @include mq(tablet) {
+    top: 10%;
+    left: 13%;
+  }
+  @include mq(desktop) {
+    top: 25%;
+    left: 30%;
+  }
+}
+.autoriz-modal-form {
+  width: 100%;
+  background: $second-color;
+  border-radius: 18px;
+  padding: 40px 20px;
+  max-width: 335px;
+  min-height: 384px;
+
+  @include mq(tablet) {
+    max-width: 579px;
+    padding: 80px 40px 40px 40px;
+  }
+}
+.autoriz-modal-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 0;
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border: 1px solid transparent;
+  &:hover,
+  &:focus {
+       transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid 8px 8px 9px -2px rgba(0, 0, 0, 0.15);
+  }
+
+  @include mq(tablet) {
+    top: 24px;
+    right: 24px;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.autoriz-modal-input {
+  width: 295px;
+  height: 50px;
+  border: 2px solid $primary-color;
+  border-radius: 40px;
+  outline: transparent;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px 5px 16px 24px;
+  margin-bottom: 24px;
+
+  @include text(700, 16px, 1.12, -0.01em);
+  &:focus + .autoriz-icon {
+    stroke: #7ea0f5;
+     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:focus-within {
+     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-color: #7ea0f5;
+  }
+  @include mq(tablet) {
+    margin-bottom: 28px;
+    width: 499px;
+    height: 64px;
+    padding: 20px 5px 20px 40px;
+    @include text(700, 18px, 1.33, -0.01em);
+  }
+}
+
+.autoriz-icon {
+  stroke: $primary-color;
+  fill: #f6f6f6;
+  position: absolute;
+  left: 253px;
+  top: 16px;
+  width: 18px;
+  height: 18px;
+  &:hover,
+  &:focus {
+      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    stroke: #7ea0f5;
+  }
+  @include mq(tablet) {
+    top: 18px;
+    left: 439px;
+    width: 28px;
+    height: 28px;
+  }
+}
+.autoriz-sing-up-btn {
+  width: 294px;
+  height: 50px;
+  background: $primary-color;
+  border-radius: 40px;
+  margin-bottom: 14px;
+  &:hover,
+  &:focus {
+      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 1px 6px 32px -4px rgba(9, 36, 240, 1);
+  }
+
+  @include text(700, 16px, 1.12, -0.01em);
+  text-transform: uppercase;
+  color: #f3f3f3;
+  padding: 16px 114px;
+
+  @include mq(tablet) {
+    margin-bottom: 20px;
+    width: 499px;
+    height: 60px;
+    @include text(700, 18px, 1.33, -0.01em);
+  }
+}
+
+.autoriz-sub-btn {
+  color: rgba(17, 17, 17, 0.5);
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  @include text(700, 14px, 1.29, -0.01em);
+  &:hover,
+  &:focus {
+      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: $accent-text-color;
+    text-decoration-line: underline;
+    text-shadow: 4px 2px 14px rgba(71, 17, 213, 0.6);
+  }
+  @include mq(tablet) {
+    @include text(700, 18px, 1.33, -0.01em);
+  }
+}
+
+.autoriz-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.sing-text:not(:last-child) {
+  margin-right: 20px;
+}
+
+::placeholder {
+  color: $primary-color;
+  text-transform: uppercase;
+  &:hover,
+  &:focus {
+    color: #7ea0f5;
+  }
+}

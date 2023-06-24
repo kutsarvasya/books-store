@@ -1,0 +1,133 @@
+.category-books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-bottom: 32px;
+}
+.book-card,
+.filtered-book {
+  cursor: pointer;
+  // min-width: 335px;
+
+  @include mq(tablet) {
+    width: 218px;
+  }
+  @include mq(desktop) {
+    width: 18%;
+  }
+}
+.book-item {
+  @include mq(mob-only) {
+    &:not(:first-child) {
+      display: none;
+    }
+  }
+  @include mq(tablet-only) {
+    &:nth-last-child(-n + 2) {
+      display: none;
+    }
+  }
+}
+
+.book-image {
+  // border-radius: 8px;
+
+  // @include mq(mob-only) {
+  //   width: 335px;
+  //   height: 485px;
+  // }
+
+  @include mq(tablet-only) {
+    width: 218px;
+    height: 366px;
+  }
+  @include mq(desktop) {
+    width: 180px;
+    height: 256px;
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 30px #7ea0f5;
+
+      outline: none;
+    }
+  }
+}
+
+.title-hero {
+  padding-bottom: 40px;
+
+  @include text(700, 32px, 1.19, -0.04em);
+
+  span {
+    color: $accent-text-color;
+  }
+  @include mq(tablet) {
+    @include text(700, 48px, 1.08, -0.04em);
+  }
+}
+.category-items {
+  padding-bottom: 40px;
+}
+.category-title {
+  @include text(400, 14px, 1.71, 0.03em);
+  text-transform: uppercase;
+  color: $second-text-color;
+  padding-bottom: 18px;
+}
+
+.books {
+  max-width: 996px;
+  @include mq(mob-only) {
+    max-width: 335px;
+  }
+  @include mq(tablet-only) {
+    max-width: 776px;
+  }
+}
+.book-title {
+  @include text(700, 16px, 1.12, -0.04em);
+  padding-top: 14px;
+  padding-bottom: 4px;
+}
+.book-author {
+  @include text(400, 12px, 1.17, -0.04em);
+  font-style: italic;
+  color: $second-text-color;
+}
+.button-see-more {
+  @include text(700, 14px, 1.29, -0.01em);
+
+  display: block;
+  margin-left: auto;
+
+  width: 124px;
+  height: 46px;
+
+  background-color: transparent;
+  border: 2px solid $accent-text-color;
+  border-radius: 40px;
+}
+
+// .card-text {
+//   @include text(false, 18px, 1.56, 0.03em);
+
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   // padding: 63px 24px;
+
+//   width: 100%;
+//   height: 26%;
+
+//   color: $primary-color;
+//   background-color: $accent-button-color;
+
+//   transform: translateY(238%);
+//   transition: transform 250ms linear;
+
+//   .card-overlay:hover & {
+//     transform: translateY(0);
+//   }
+// }

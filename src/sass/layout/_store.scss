@@ -1,0 +1,350 @@
+.shopping-title {
+  @include text(700, 32px, 1.19, -0.04em);
+  margin-bottom: 40px;
+  span {
+    color: $accent-text-color;
+  }
+  @include mq(tablet) {
+    // @include text(700, 48px, 1.08, -0.04em);
+    font-size: 48px;
+    line-height: 1.08;
+  }
+}
+.tablet {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+}
+
+.book {
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  width: 335px;
+  border: 2px solid #4f2ee866;
+  border-radius: 16px;
+  position: relative;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  //   transition: ease-in 5s;
+  @include mq(tablet) {
+    width: 704px;
+    gap: 24px;
+    padding: 24px;
+  }
+  @include mq(desktop) {
+    width: 996px;
+  }
+}
+
+.book__author {
+  color: #b4afaf;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.17;
+  @include mq(tablet) {
+    margin-top: 14px;
+  }
+}
+.book__title {
+  margin-bottom: 4px;
+
+  @include text(700, 16px, 1.12, -0.04em);
+
+  span {
+    color: $accent-text-color;
+  }
+  @include mq(desktop) {
+    @include text(700, 16px, 1.12, -0.04em);
+  }
+}
+.book__categ {
+  @include text(400, 12px, 1.17, 0.03em);
+  margin-bottom: 8px;
+
+  color: #b4afaf;
+  @include mq(tablet) {
+    margin-bottom: 14px;
+  }
+}
+.list-container {
+  @include mq(desktop) {
+    margin-left: 40px;
+  }
+}
+.delete-book {
+  width: 28px;
+  height: 28px;
+  background-color: #4f2ee8;
+  border: none;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  display: flex;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  transition: ease-in;
+  @include mq(tablet) {
+    width: 34px;
+    height: 34px;
+    top: 24px;
+    right: 24px;
+  }
+  &:hover {
+    box-shadow: 0 0 10px 0 #4f2ee8 inset, 0 0 10px 4px #4f2ee8;
+  }
+}
+.delete-book .delete-icon {
+  &:hover {
+    animation: rotate 0.5s ease;
+    transform-origin: center;
+  }
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+  }
+}
+.delete-icon {
+  @include mq(tablet) {
+    width: 18px;
+    height: 18px;
+  }
+}
+.book__image {
+  min-width: 100px;
+  height: 142px;
+  //   flex-shrink: 0;
+  //   margin-bottom: 4px;
+  //   margin-right: 20px;
+}
+.book__image {
+  @include mq(tablet) {
+    min-width: 116px;
+    height: 165px;
+  }
+}
+.book__description {
+  @include text(400, 14px, 1.29, -0.04em);
+  margin-bottom: 14px;
+  width: 193px;
+  height: 68px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  @include mq(tablet) {
+    width: 508px;
+    height: 53px;
+    margin-bottom: 32px;
+  }
+  @include mq(desktop) {
+    width: 808px;
+  }
+}
+.shop__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo__list {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  @include mq(tablet) {
+    gap: 16px;
+  }
+}
+.logo-item {
+  &:hover {
+    box-shadow: 0 0 10px 0 #6fa3ec inset, 0 0 10px 4px #6fa3ec;
+  }
+}
+.logo-amazon {
+  @include mq(tablet) {
+    width: 48px;
+    height: 15px;
+  }
+  @include mq(desktop) {
+    width: 48px;
+    height: 15px;
+  }
+}
+.logo-apple {
+  width: 16px;
+  height: 16px;
+  @include mq(tablet) {
+    width: 28px;
+    height: 27px;
+  }
+}
+.logo-bookshop-mini {
+  width: 16px;
+  height: 16px;
+  @include mq(tablet) {
+    width: 32px;
+    height: 30px;
+  }
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  @include mq(tablet) {
+    margin-top: 40px;
+  }
+}
+.pagination-button {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22em;
+  background-color: white;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  @include mq(tablet) {
+    width: 44px;
+    height: 44px;
+  }
+}
+.pagination-button {
+  &:hover {
+    box-shadow: 0 0 10px 0 #000000 inset, 0 0 10px 4px #000000;
+  }
+}
+.pagination-button.active {
+  background-color: black;
+  color: white;
+}
+.pagination-button.black {
+  background-color: black;
+  color: white;
+}
+.pagination-button.yellow {
+  background-color: #eac645;
+
+  color: black;
+}
+.pagination-button.notclick {
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 5;
+  }
+}
+
+.booklist {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  @include mq(tablet) {
+    gap: 20px;
+  }
+}
+
+.empty-section {
+  /* max-width: 100%; */
+  color: #00000080;
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin: 120px 45px 302px 45px;
+  display: flex;
+  align-items: center;
+  @include mq(tablet) {
+    margin: 140px 170px 394px 170px;
+  }
+  @include mq(desktop) {
+    margin: 140px 315px 394px 315px;
+  }
+}
+
+.empty-image {
+  max-width: 265px;
+  @include mq(tablet) {
+    width: 322px;
+    height: 241px;
+  }
+}
+.empty-store-text-img {
+  @include text(400, 14px, 1.33, -0.02em);
+
+  color: rgba(0, 0, 0, 0.6);
+  @include mq(tablet) {
+    @include text(400, 18px, 1.33, -0.02em);
+    width: 349px;
+    height: 48px;
+  }
+}
+/* <style>
+      img {
+        width: 200px;
+        height: 300px;
+      }
+      .booklist {
+        display: flex;
+        gap: 24px;
+        margin-left: 10px;
+        flex-direction: column;
+        width: 913px;
+      }
+      .ico-buy {
+        width: 40px;
+      }
+      .book {
+        border: solid 2px rgb(65, 7, 237);
+        border-radius: 10px;
+        padding: 15px;
+        width: px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start;
+        text-align: start;
+        position: relative;
+      }
+
+      .book__image {
+        padding-right: 10px;
+      }
+      .book__buy-link {
+        height: 40px;
+        margin: 10px;
+      }
+      .book__title {
+        margin-bottom: 10px;
+        text-align: start;
+        display: flex;
+        justify-content: start;
+      }
+      .book__description {
+        flex-direction: column;
+        margin-bottom: 10px;
+        width: 400px;
+      }
+      .container-card {
+        display: block;
+      }
+      .delete-book {
+        width: 60px;
+        height: 30px;
+        position: absolute;
+        top: 10;
+        right: 10;
+      }
+    </style>  */
